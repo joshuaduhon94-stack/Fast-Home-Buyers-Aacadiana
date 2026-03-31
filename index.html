@@ -1,183 +1,864 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Solid State by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast Home Buyers Acadiana | Sell Your House Fast in Lafayette, LA</title>
+  <meta name="description" content="Sell your house fast in Lafayette and across Acadiana. No repairs. No agent fees. Close on your timeline." />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: #0f172a;
+      --panel-2: #111827;
+      --text: #e5eefb;
+      --muted: #a8b4c9;
+      --line: rgba(255,255,255,.10);
+      --brand: #22c55e;
+      --brand-dark: #16a34a;
+      --accent: #f59e0b;
+      --danger: #ef4444;
+      --shadow: 0 20px 50px rgba(0,0,0,.28);
+      --radius: 20px;
+      --max: 1180px;
+    }
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(34,197,94,.10), transparent 30%),
+        radial-gradient(circle at top left, rgba(245,158,11,.10), transparent 28%),
+        linear-gradient(180deg, #0a1222 0%, #08111f 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Solid State</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(100% - 28px, var(--max)); margin: 0 auto; }
+    .section { padding: 72px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid rgba(34,197,94,.25);
+      border-radius: 999px;
+      color: #d6ffe5;
+      background: rgba(34,197,94,.10);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(34,197,94,.15);
+    }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(8,17,31,.70);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 74px;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .01em;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), #86efac);
+      color: #04120a;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      box-shadow: var(--shadow);
+    }
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .nav-links a:hover { color: white; }
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>This is Solid State</h2>
-							<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
-						</div>
-					</section>
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 18px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition: .18s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(180deg, var(--brand), var(--brand-dark));
+      color: #04120a;
+      box-shadow: 0 10px 28px rgba(34,197,94,.30);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.04);
+      color: white;
+      border-color: var(--line);
+    }
+    .btn-light {
+      background: white;
+      color: #0f172a;
+    }
+    .btn-full { width: 100%; }
 
-				<!-- Wrapper -->
-					<section id="wrapper">
+    .hero {
+      padding: 62px 0 48px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .hero-copy,
+    .panel {
+      background: linear-gradient(180deg, rgba(17,24,39,.86), rgba(15,23,42,.90));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero-copy {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(34,197,94,.18), transparent 65%);
+      pointer-events: none;
+    }
+    h1 {
+      margin: 16px 0 14px;
+      font-size: clamp(2.2rem, 4.6vw, 4.5rem);
+      line-height: .98;
+      letter-spacing: -.03em;
+      max-width: 12ch;
+    }
+    .lead {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.14rem);
+      max-width: 58ch;
+    }
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      margin: 22px 0 28px;
+    }
+    .point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+    }
+    .point strong { display: block; margin-bottom: 2px; }
+    .point span {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(34,197,94,.15);
+      display: grid;
+      place-items: center;
+      color: #d6ffe5;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .micro {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Magna arcu feugiat</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+    .panel {
+      padding: 24px;
+    }
+    .panel h2 {
+      margin: 8px 0 8px;
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+      line-height: 1.05;
+    }
+    .panel p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+    .trust-badges {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .badge {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 700;
+    }
 
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+    form {
+      display: grid;
+      gap: 12px;
+    }
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+    label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #d7e3f7;
+    }
+    input, textarea, select {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: white;
+      padding: 14px 15px;
+      outline: none;
+      font: inherit;
+    }
+    textarea {
+      min-height: 118px;
+      resize: vertical;
+    }
+    input::placeholder, textarea::placeholder { color: #97a8c3; }
+    input:focus, textarea:focus, select:focus {
+      border-color: rgba(34,197,94,.55);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.14);
+    }
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
 
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+    .strip {
+      padding-top: 0;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 14px;
+    }
+    .stat {
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.7rem;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat span { color: var(--muted); }
 
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 26px;
+    }
+    .section-head h2 {
+      margin: 12px 0 10px;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -.03em;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
 
-					</section>
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+    .card {
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(34,197,94,.12);
+      color: #d6ffe5;
+      font-size: 23px;
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+    .situations {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+    }
+    .situation {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .situation b {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .situation span {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-			</div>
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .compare-box {
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .compare-box h3 {
+      margin: 0 0 14px;
+      font-size: 1.3rem;
+    }
+    .compare-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .compare-box li {
+      padding-left: 28px;
+      position: relative;
+      color: var(--muted);
+    }
+    .compare-box li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--brand);
+      font-weight: 900;
+    }
+    .compare-box.bad li::before { color: var(--danger); content: "✕"; }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    .quote {
+      padding: 28px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(34,197,94,.11), rgba(255,255,255,.03));
+      border: 1px solid rgba(34,197,94,.24);
+      box-shadow: var(--shadow);
+    }
+    .quote p {
+      margin: 0 0 14px;
+      font-size: 1.12rem;
+      color: #eff8ff;
+    }
+    .quote small { color: #d6e4f5; }
 
-	</body>
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+    details {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding: 16px 18px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+      padding-right: 28px;
+      position: relative;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: -2px;
+      font-size: 22px;
+      color: var(--accent);
+    }
+    details[open] summary::after { content: "−"; }
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .cta-band {
+      padding: 34px;
+      border-radius: 28px;
+      border: 1px solid rgba(34,197,94,.22);
+      background:
+        radial-gradient(circle at top right, rgba(34,197,94,.16), transparent 25%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.03));
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 20px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+    .cta-band h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -.03em;
+    }
+    .cta-band p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 54ch;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .footer {
+      padding: 30px 0 52px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .mobile-hide { display: inline-flex; }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .comparison,
+      .cta-band {
+        grid-template-columns: 1fr;
+      }
+      .grid-3,
+      .situations {
+        grid-template-columns: 1fr 1fr;
+      }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .cta-actions { justify-content: flex-start; }
+      .nav-links {
+        display: none;
+      }
+      h1 { max-width: 14ch; }
+    }
+
+    @media (max-width: 640px) {
+      .section { padding: 56px 0; }
+      .hero { padding-top: 34px; }
+      .hero-copy,
+      .panel,
+      .cta-band { padding: 22px; }
+      .hero-points,
+      .grid-3,
+      .situations,
+      .stats,
+      .trust-badges {
+        grid-template-columns: 1fr;
+      }
+      .cta-row { display: grid; grid-template-columns: 1fr; }
+      .mobile-hide { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    QUICK CONFIG
+    Replace these 4 values first:
+    1) Phone number: (337) 555-1234
+    2) Phone link: tel:+13375551234
+    3) SMS link: sms:+13375551234
+    4) Email: hello@fasthomebuyersacadiana.com
+
+    Optional form hookup:
+    - Replace FORM_ACTION_URL with your Formspree or FormSubmit endpoint.
+    - If you do not have one yet, the form will still display but will not send.
+  -->
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Fast Home Buyers Acadiana home">
+        <div class="brand-mark">🏠</div>
+        <div>
+          Fast Home Buyers Acadiana
+          <small>Local house buyers in Lafayette & surrounding areas</small>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#situations">Situations</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary mobile-hide" href="tel:+13375551234">Call (337) 555-1234</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">We buy houses as-is in Acadiana</div>
+          <h1>Sell your house fast in Lafayette without repairs, fees, or stress.</h1>
+          <p class="lead">If you need to sell quickly, we can make a fair cash offer, buy the property as-is, and close on your timeline. No agent commissions. No cleanup. No pressure.</p>
+
+          <div class="hero-points">
+            <div class="point">
+              <span>✓</span>
+              <div>
+                <strong>No repairs needed</strong>
+                You do not need to paint, clean, or fix anything.
+              </div>
+            </div>
+            <div class="point">
+              <span>✓</span>
+              <div>
+                <strong>No agent fees</strong>
+                Skip commissions, showings, and months of waiting.
+              </div>
+            </div>
+            <div class="point">
+              <span>✓</span>
+              <div>
+                <strong>Close fast</strong>
+                We can move quickly when speed matters most.
+              </div>
+            </div>
+            <div class="point">
+              <span>✓</span>
+              <div>
+                <strong>Local buyer</strong>
+                We focus on Lafayette and nearby Acadiana markets.
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#offer-form">Get My Cash Offer</a>
+            <a class="btn btn-secondary" href="tel:+13375551234">Call Now</a>
+            <a class="btn btn-secondary" href="sms:+13375551234">Text Us</a>
+          </div>
+          <div class="micro">Most sellers contact us because they want a simple solution, not a long sales process.</div>
+        </div>
+
+        <aside class="panel" id="offer-form">
+          <div class="eyebrow">Request your offer</div>
+          <h2>Tell us about the property.</h2>
+          <p>Fill this out and we will reach out to discuss the house, your timeline, and the next step.</p>
+
+          <form action="FORM_ACTION_URL" method="POST">
+            <div class="field">
+              <label for="address">Property address</label>
+              <input id="address" name="property_address" type="text" placeholder="123 Main St, Lafayette, LA" required>
+            </div>
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" placeholder="Your full name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="(337) 555-1234" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="timeline">What is your timeline?</label>
+              <select id="timeline" name="timeline">
+                <option value="As soon as possible">As soon as possible</option>
+                <option value="Within 30 days">Within 30 days</option>
+                <option value="1 to 3 months">1 to 3 months</option>
+                <option value="Just exploring options">Just exploring options</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="details">Anything we should know?</label>
+              <textarea id="details" name="details" placeholder="Repairs needed, inherited property, tenants, foreclosure, probate, etc."></textarea>
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">Request My Offer</button>
+            <div class="form-note">Replace <b>FORM_ACTION_URL</b> in the code with your form service endpoint. Until then, the form is for layout only.</div>
+          </form>
+
+          <div class="trust-badges">
+            <div class="badge">No Obligation</div>
+            <div class="badge">Local Market Focus</div>
+            <div class="badge">Sell As-Is</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section strip">
+      <div class="wrap stats">
+        <div class="stat">
+          <strong>As-Is</strong>
+          <span>We buy houses in current condition.</span>
+        </div>
+        <div class="stat">
+          <strong>Fast</strong>
+          <span>We move quickly when timing matters.</span>
+        </div>
+        <div class="stat">
+          <strong>Local</strong>
+          <span>Lafayette and surrounding Acadiana areas.</span>
+        </div>
+        <div class="stat">
+          <strong>Simple</strong>
+          <span>Clear process. No long list process.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">How it works</div>
+          <h2>A simple 3-step process to sell your house fast.</h2>
+          <p>You do not need a complicated process. You need clarity, speed, and a real option that works for your situation.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">1</div>
+            <h3>Tell us about the property</h3>
+            <p>Call, text, or submit the form. Share the address and a few details about the house and your timeline.</p>
+          </div>
+          <div class="card">
+            <div class="icon">2</div>
+            <h3>We review and make an offer</h3>
+            <p>We evaluate the property, needed repairs, market value, and the best path to make an offer that makes sense.</p>
+          </div>
+          <div class="card">
+            <div class="icon">3</div>
+            <h3>You choose the closing date</h3>
+            <p>If the offer works for you, we handle the next step and close on a timeline that fits your situation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why-us">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Why sellers choose us</div>
+          <h2>We focus on a practical solution, not a drawn-out sales pitch.</h2>
+          <p>Many sellers do not need retail. They need speed, certainty, and less friction. That is where a direct buyer can make sense.</p>
+        </div>
+
+        <div class="comparison">
+          <div class="compare-box">
+            <h3>Selling to Fast Home Buyers Acadiana</h3>
+            <ul>
+              <li>No repairs, cleanup, or staging required</li>
+              <li>No agent commissions</li>
+              <li>No repeated showings</li>
+              <li>Flexible closing timeline</li>
+              <li>Straightforward process</li>
+              <li>Works for difficult properties and difficult situations</li>
+            </ul>
+          </div>
+          <div class="compare-box bad">
+            <h3>Traditional listing route</h3>
+            <ul>
+              <li>Repairs, prep work, and uncertainty</li>
+              <li>Agent commissions and holding costs</li>
+              <li>Showings, open houses, and buyer financing issues</li>
+              <li>Longer timelines and more moving parts</li>
+              <li>Inspections and renegotiations</li>
+              <li>Harder path for problem properties</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="situations">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Situations we help with</div>
+          <h2>If the house has problems, that does not mean you are stuck.</h2>
+          <p>We work with sellers who need a fast exit, a simple process, or a realistic option for a house that is hard to sell the normal way.</p>
+        </div>
+
+        <div class="situations">
+          <div class="situation"><div>🏚️</div><div><b>Major repairs needed</b><span>Roof, foundation, plumbing, electrical, or heavy cosmetic issues.</span></div></div>
+          <div class="situation"><div>⏳</div><div><b>Need to sell quickly</b><span>Job change, relocation, financial pressure, or personal timeline.</span></div></div>
+          <div class="situation"><div>👨‍👩‍👧</div><div><b>Inherited property</b><span>Probate, cleanout, distance, or multiple heirs involved.</span></div></div>
+          <div class="situation"><div>⚠️</div><div><b>Foreclosure pressure</b><span>Behind on payments and looking for a faster option.</span></div></div>
+          <div class="situation"><div>🧍</div><div><b>Bad tenants</b><span>Problem renters, unpaid rent, damage, or eviction headaches.</span></div></div>
+          <div class="situation"><div>🏠</div><div><b>Vacant or unwanted house</b><span>Too much upkeep, liability, or stress sitting empty.</span></div></div>
+          <div class="situation"><div>💔</div><div><b>Divorce or separation</b><span>Need a clean and practical way to move on.</span></div></div>
+          <div class="situation"><div>🧾</div><div><b>Title or legal issues</b><span>Complicated situations that need a direct buyer approach.</span></div></div>
+          <div class="situation"><div>🧰</div><div><b>Landlord burnout</b><span>Tired of maintenance, turnover, and constant calls.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="quote">
+          <p>Most cash buyers do not pay full retail. That is the tradeoff for speed, simplicity, and buying the property as-is. For many sellers, that tradeoff is worth it because it removes repairs, fees, delays, and uncertainty.</p>
+          <small>This section builds trust because it answers the objection before the seller asks it.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">FAQ</div>
+          <h2>Questions sellers usually ask first.</h2>
+          <p>Keep this section. It reduces hesitation and helps conversion.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Do I need to fix the house before selling?</summary>
+            <p>No. We buy houses as-is. You do not need to make repairs, clean everything out, or get the property market-ready.</p>
+          </details>
+          <details>
+            <summary>Do you charge fees or commissions?</summary>
+            <p>No agent commission. The goal is a direct sale with fewer moving parts than a traditional listing.</p>
+          </details>
+          <details>
+            <summary>How fast can you close?</summary>
+            <p>That depends on title work and your situation, but direct buyers can often move much faster than a traditional retail sale.</p>
+          </details>
+          <details>
+            <summary>What kinds of houses do you buy?</summary>
+            <p>We look at inherited houses, rental properties, vacant homes, houses with repair issues, and many other situations across Lafayette and nearby Acadiana areas.</p>
+          </details>
+          <details>
+            <summary>Am I obligated if I submit my info?</summary>
+            <p>No. Reaching out does not commit you to anything. It just starts the conversation.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <div class="eyebrow">Ready to talk?</div>
+            <h2>Get a fair cash offer for your house in Lafayette.</h2>
+            <p>If you want a quick conversation about your property and your options, call, text, or fill out the form. We can talk through the situation and see if a direct sale makes sense.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="#offer-form">Get My Offer</a>
+            <a class="btn btn-light" href="tel:+13375551234">Call (337) 555-1234</a>
+            <a class="btn btn-secondary" href="sms:+13375551234">Text Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Fast Home Buyers Acadiana</strong><br>
+        Selling your house should not feel harder than keeping it.
+      </div>
+      <div>
+        <a href="tel:+13375551234">(337) 555-1234</a> · <a href="mailto:hello@fasthomebuyersacadiana.com">hello@fasthomebuyersacadiana.com</a>
+      </div>
+      <div>Serving Lafayette, Broussard, Youngsville, Scott, Carencro, and surrounding Acadiana areas.</div>
+    </div>
+  </footer>
+</body>
 </html>
