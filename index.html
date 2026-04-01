@@ -882,7 +882,7 @@
     };
 
     try {
-      const response = await fetch("https://services.leadconnectorhq.com/hooks/KCtURJm9dbBpVYaL6uV8/webhook-trigger/0836a820-ceb9-43c8-bd5d-ae61d0f34557", {
+      const response = await fetch("https://services.leadconnectorhq.com/hooks/KCtURJm9dbBpVYaL6uV8/webhook-trigger/6d5d89bc-4f76-4146-8a17-e3755e1baa14", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -891,12 +891,13 @@
       });
 
       if (response.ok) {
-        window.location.href = "https://joshuaduhon94-stack.github.io/Fast-Home-Buyers-Aacadiana/";
+        alert("Form submitted successfully.");
       } else {
-        alert("Something went wrong. Please call or text us instead.");
+        alert("Webhook failed.");
       }
     } catch (error) {
-      alert("Something went wrong. Please call or text us instead.");
+      alert("Request error.");
+      console.error(error);
     }
   });
 </script>
