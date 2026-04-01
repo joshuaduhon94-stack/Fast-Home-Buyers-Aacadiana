@@ -640,7 +640,7 @@
           <h2>Tell us about the property.</h2>
           <p>Fill this out and we will reach out to discuss the house, your timeline, and the next step.</p>
 
-         <form action="https://services.leadconnectorhq.com/hooks/KCtURJm9dbBpVYaL6uV8/webhook-trigger/0836a820-ceb9-43c8-bd5d-ae61d0f34557" method="POST">
+         <<form id="sellerForm">
             <div class="field">
               <label for="address">Property address</label>
               <input id="address" name="property_address" type="text" placeholder="123 Main St, Lafayette, LA" required>
@@ -861,5 +861,39 @@
       <div>Serving Lafayette, Broussard, Youngsville, Scott, Carencro, and surrounding Acadiana areas.</div>
     </div>
   </footer>
+  <script>
+  const form = document.getElementById("sellerForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = {
+      firstName: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      email: document.getElementById("email").value,
+      address1: document.getElementById("address").value,
+      timeline: document.getElementById("timeline").value,
+      details: document.getElementById("details").value
+    };
+
+    try {
+      const response = await fetch("https://services.leadconnectorhq.com/hooks/KCtURJm9dbBpVYaL6uV8/webhook-trigger/0836a820-ceb9-43c8-bd5d-ae61d0f34557", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        window.location.href = "/Fast-Home-Buyers-Aacadiana/thank-you.html";
+      } else {
+        alert("Something went wrong. Please call or text us instead.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please call or text us instead.");
+    }
+  });
+</script>
 </body>
 </html>
