@@ -640,39 +640,44 @@
           <h2>Tell us about the property.</h2>
           <p>Fill this out and we will reach out to discuss the house, your timeline, and the next step.</p>
 
-         <<form id="sellerForm">
-            <div class="field">
-              <label for="address">Property address</label>
-              <input id="address" name="property_address" type="text" placeholder="123 Main St, Lafayette, LA" required>
-            </div>
-            <div class="field">
-              <label for="name">Your name</label>
-              <input <input id="name" name="firstName" type="text" placeholder="Your full name" required>
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" placeholder="(337) 270-2488" required>
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com">
-            </div>
-            <div class="field">
-              <label for="timeline">What is your timeline?</label>
-              <select id="timeline" name="timeline">
-                <option value="As soon as possible">As soon as possible</option>
-                <option value="Within 30 days">Within 30 days</option>
-                <option value="1 to 3 months">1 to 3 months</option>
-                <option value="Just exploring options">Just exploring options</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="details">Anything we should know?</label>
-              <textarea id="details" name="details" placeholder="Repairs needed, inherited property, tenants, foreclosure, probate, etc."></textarea>
-            </div>
-            <button class="btn btn-primary btn-full" type="submit">Request My Offer</button>
-            <div class="form-note">Replace <b>FORM_ACTION_URL</b> in the code with your form service endpoint. Until then, the form is for layout only.</div>
-          </form>
+        <form id="sellerForm">
+  <div class="field">
+    <label for="address">Property address</label>
+    <input id="address" name="address1" type="text" placeholder="123 Main St, Lafayette, LA" required>
+  </div>
+
+  <div class="field">
+    <label for="name">Your name</label>
+    <input id="name" name="firstName" type="text" placeholder="Your full name" required>
+  </div>
+
+  <div class="field">
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel" placeholder="(337) 270-2488" required>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com">
+  </div>
+
+  <div class="field">
+    <label for="timeline">What is your timeline?</label>
+    <select id="timeline" name="timeline">
+      <option value="As soon as possible">As soon as possible</option>
+      <option value="Within 30 days">Within 30 days</option>
+      <option value="1 to 3 months">1 to 3 months</option>
+      <option value="Just exploring options">Just exploring options</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="details">Anything we should know?</label>
+    <textarea id="details" name="details" placeholder="Repairs needed, inherited property, tenants, foreclosure, probate, etc."></textarea>
+  </div>
+
+  <button class="btn btn-primary btn-full" type="submit">Request My Offer</button>
+</form>
 
           <div class="trust-badges">
             <div class="badge">No Obligation</div>
@@ -886,7 +891,7 @@
       });
 
       if (response.ok) {
-        window.location.href = "/Fast-Home-Buyers-Aacadiana/thank-you.html";
+        window.location.href = "https://joshuaduhon94-stack.github.io/Fast-Home-Buyers-Aacadiana/";
       } else {
         alert("Something went wrong. Please call or text us instead.");
       }
