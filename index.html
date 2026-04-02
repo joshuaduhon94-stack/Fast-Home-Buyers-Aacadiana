@@ -515,34 +515,43 @@
       padding-top: 18px;
       border-top: 1px solid var(--line);
     }
+
     .mobile-hide { display: inline-flex; }
 
-   @media (max-width: 980px) {
-  .hero-grid,
-  .comparison,
-  .cta-band {
-    grid-template-columns: 1fr;
-  }
+    @media (max-width: 980px) {
+      .hero-grid,
+      .comparison,
+      .cta-band {
+        grid-template-columns: 1fr;
+      }
+      .grid-3,
+      .situations {
+        grid-template-columns: 1fr 1fr;
+      }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .cta-actions { justify-content: flex-start; }
+      .nav-links {
+        display: none;
+      }
+      h1 { max-width: 14ch; }
+    }
 
-  .hero-grid {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .grid-3,
-  .situations {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .stats { grid-template-columns: 1fr 1fr; }
-  .cta-actions { justify-content: flex-start; }
-
-  .nav-links {
-    display: none;
-  }
-
-  h1 { max-width: 14ch; }
-}
+    @media (max-width: 640px) {
+      .section { padding: 56px 0; }
+      .hero { padding-top: 34px; }
+      .hero-copy,
+      .panel,
+      .cta-band { padding: 22px; }
+      .hero-points,
+      .grid-3,
+      .situations,
+      .stats,
+      .trust-badges {
+        grid-template-columns: 1fr;
+      }
+      .cta-row { display: grid; grid-template-columns: 1fr; }
+      .mobile-hide { display: none; }
+    }
   </style>
 </head>
 <body>
