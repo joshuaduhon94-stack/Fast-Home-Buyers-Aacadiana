@@ -6,6 +6,10 @@
   <title>Sell My House Fast Lafayette LA | Cash Home Buyers Acadiana</title>
   <meta name="description" content="We buy houses in Lafayette and Acadiana. Get a fair cash offer in 24 hours. No repairs, no fees, close fast." />
   <meta name="theme-color" content="#0f172a" />
+  <meta property="og:title" content="Sell My House Fast Lafayette LA | Cash Home Buyers Acadiana" />
+  <meta property="og:description" content="Sell your house as-is in Lafayette and Acadiana. No repairs. No fees. Close on your timeline." />
+  <meta property="og:type" content="website" />
+  <meta name="format-detection" content="telephone=yes" />
   <style>
     :root {
       --bg: #08111f;
@@ -21,6 +25,7 @@
       --shadow: 0 20px 50px rgba(0,0,0,.28);
       --radius: 20px;
       --max: 1180px;
+      --success: #86efac;
     }
 
     * { box-sizing: border-box; }
@@ -68,7 +73,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(12px);
-      background: rgba(8,17,31,.70);
+      background: rgba(8,17,31,.72);
       border-bottom: 1px solid var(--line);
     }
     .nav {
@@ -143,19 +148,24 @@
       color: #0f172a;
     }
     .btn-full { width: 100%; }
+    .btn[disabled] {
+      opacity: .7;
+      cursor: wait;
+      transform: none;
+    }
 
     .hero {
       padding: 62px 0 48px;
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.08fr .92fr;
       gap: 28px;
       align-items: stretch;
     }
     .hero-copy,
     .panel {
-      background: linear-gradient(180deg, rgba(17,24,39,.86), rgba(15,23,42,.90));
+      background: linear-gradient(180deg, rgba(17,24,39,.86), rgba(15,23,42,.92));
       border: 1px solid var(--line);
       border-radius: 24px;
       box-shadow: var(--shadow);
@@ -192,7 +202,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 12px;
-      margin: 22px 0 28px;
+      margin: 22px 0 24px;
     }
     .point {
       display: flex;
@@ -226,9 +236,7 @@
       font-size: 14px;
     }
 
-    .panel {
-      padding: 24px;
-    }
+    .panel { padding: 24px; }
     .panel h2 {
       margin: 8px 0 8px;
       font-size: clamp(1.5rem, 2.2vw, 2rem);
@@ -255,20 +263,14 @@
       font-weight: 700;
     }
 
-    form {
-      display: grid;
-      gap: 12px;
-    }
-    .field {
-      display: grid;
-      gap: 7px;
-    }
+    form { display: grid; gap: 12px; }
+    .field { display: grid; gap: 7px; }
     label {
       font-size: 13px;
       font-weight: 700;
       color: #d7e3f7;
     }
-    input, textarea, select {
+    input {
       width: 100%;
       min-height: 52px;
       border-radius: 14px;
@@ -279,12 +281,8 @@
       outline: none;
       font: inherit;
     }
-    textarea {
-      min-height: 118px;
-      resize: vertical;
-    }
-    input::placeholder, textarea::placeholder { color: #97a8c3; }
-    input:focus, textarea:focus, select:focus {
+    input::placeholder { color: #97a8c3; }
+    input:focus {
       border-color: rgba(34,197,94,.55);
       box-shadow: 0 0 0 4px rgba(34,197,94,.14);
     }
@@ -293,10 +291,19 @@
       color: var(--muted);
       line-height: 1.45;
     }
-
-    .strip {
-      padding-top: 0;
+    .success-message {
+      display: none;
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(34,197,94,.12);
+      border: 1px solid rgba(34,197,94,.30);
+      color: #dcfce7;
+      font-weight: 700;
     }
+    .success-message.show { display: block; }
+
+    .strip { padding-top: 0; }
     .stats {
       display: grid;
       grid-template-columns: repeat(4, minmax(0,1fr));
@@ -364,6 +371,21 @@
       color: var(--muted);
     }
 
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+    }
+    .pill {
+      padding: 14px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      text-align: center;
+      color: #dbe8fb;
+      font-weight: 700;
+    }
+
     .situations {
       display: grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
@@ -423,6 +445,53 @@
       font-weight: 900;
     }
     .compare-box.bad li::before { color: var(--danger); content: "✕"; }
+
+    .buyer-box {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .buyer-photo,
+    .buyer-copy {
+      padding: 24px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+    }
+    .buyer-photo {
+      display: grid;
+      place-items: center;
+      min-height: 260px;
+      text-align: center;
+      color: var(--muted);
+      background:
+        radial-gradient(circle at top, rgba(34,197,94,.14), transparent 32%),
+        rgba(255,255,255,.03);
+    }
+    .buyer-avatar {
+      width: 94px;
+      height: 94px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-size: 34px;
+      color: #04120a;
+      background: linear-gradient(180deg, #bbf7d0, #22c55e);
+      box-shadow: var(--shadow);
+      margin-bottom: 12px;
+    }
+    .buyer-copy h3,
+    .buyer-photo h3 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+    }
+    .buyer-copy p,
+    .buyer-photo p {
+      margin: 0;
+      color: var(--muted);
+    }
 
     .quote {
       padding: 28px;
@@ -502,7 +571,7 @@
     }
 
     .footer {
-      padding: 30px 0 52px;
+      padding: 30px 0 92px;
       color: var(--muted);
       font-size: 14px;
     }
@@ -517,22 +586,23 @@
     }
 
     .mobile-hide { display: inline-flex; }
+    .call-float { display: none; }
 
     @media (max-width: 980px) {
       .hero-grid,
       .comparison,
-      .cta-band {
+      .cta-band,
+      .buyer-box {
         grid-template-columns: 1fr;
       }
       .grid-3,
       .situations {
         grid-template-columns: 1fr 1fr;
       }
+      .pill-grid,
       .stats { grid-template-columns: 1fr 1fr; }
       .cta-actions { justify-content: flex-start; }
-      .nav-links {
-        display: none;
-      }
+      .nav-links { display: none; }
       h1 { max-width: 14ch; }
     }
 
@@ -541,18 +611,84 @@
       .hero { padding-top: 34px; }
       .hero-copy,
       .panel,
-      .cta-band { padding: 22px; }
+      .cta-band,
+      .buyer-photo,
+      .buyer-copy { padding: 22px; }
       .hero-points,
       .grid-3,
       .situations,
       .stats,
-      .trust-badges {
+      .trust-badges,
+      .pill-grid {
         grid-template-columns: 1fr;
       }
       .cta-row { display: grid; grid-template-columns: 1fr; }
       .mobile-hide { display: none; }
+
+      .call-float {
+        position: fixed;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        min-height: 56px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(180deg, var(--brand), var(--brand-dark));
+        color: #04120a;
+        border-radius: 16px;
+        font-weight: 900;
+        z-index: 40;
+        box-shadow: 0 14px 30px rgba(0,0,0,.35);
+      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Fast Home Buyers Acadiana",
+    "telephone": "+1-337-270-2488",
+    "areaServed": ["Lafayette, LA", "Broussard, LA", "Youngsville, LA", "Scott, LA", "Carencro, LA", "Acadiana"],
+    "description": "We buy houses as-is in Lafayette and Acadiana. No repairs. No fees. Close on your timeline."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Do I need to fix the house before selling?",
+        "acceptedAnswer":{"@type":"Answer","text":"No. We buy houses as-is. You do not need to make repairs, clean everything out, or get the property market-ready."}
+      },
+      {
+        "@type":"Question",
+        "name":"Do you charge fees or commissions?",
+        "acceptedAnswer":{"@type":"Answer","text":"No agent commission. The goal is a direct sale with fewer moving parts than a traditional listing."}
+      },
+      {
+        "@type":"Question",
+        "name":"How fast can you close?",
+        "acceptedAnswer":{"@type":"Answer","text":"That depends on title work and your situation, but direct buyers can often move much faster than a traditional retail sale."}
+      },
+      {
+        "@type":"Question",
+        "name":"What kinds of houses do you buy?",
+        "acceptedAnswer":{"@type":"Answer","text":"We look at inherited houses, rental properties, vacant homes, houses with repair issues, and many other situations across Lafayette and nearby Acadiana areas."}
+      },
+      {
+        "@type":"Question",
+        "name":"Am I obligated if I submit my info?",
+        "acceptedAnswer":{"@type":"Answer","text":"No. Reaching out does not commit you to anything. It just starts the conversation."}
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -561,7 +697,7 @@
         <div class="brand-mark">🏠</div>
         <div>
           Fast Home Buyers Acadiana
-          <small>Local house buyers in Lafayette & surrounding areas</small>
+          <small>Local house buyers in Lafayette &amp; surrounding areas</small>
         </div>
       </a>
       <nav class="nav-links" aria-label="Primary">
@@ -615,6 +751,7 @@
 
           <div class="cta-row">
             <a class="btn btn-primary" href="#offer-form">Get My Cash Offer</a>
+            <a class="btn btn-secondary" href="tel:+13372702488">Call Now</a>
           </div>
           <div class="micro">Most sellers reach out because they want certainty, not a long sales process.</div>
         </div>
@@ -640,8 +777,10 @@
               <input id="phone" name="phone" type="tel" placeholder="(337) 270-2488" required>
             </div>
 
-            <button class="btn btn-primary btn-full" type="submit">Get My Cash Offer</button>
+            <button class="btn btn-primary btn-full" id="submitBtn" type="submit">Get My Cash Offer</button>
           </form>
+
+          <div id="successMessage" class="success-message">Thanks. We got your info and will reach out shortly.</div>
 
           <div class="trust-badges">
             <div class="badge">No obligation</div>
@@ -672,6 +811,27 @@
         <div class="stat">
           <strong>Simple</strong>
           <span>Clear process. No long list of steps.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Why people contact us</div>
+          <h2>The normal selling route is too slow for many sellers.</h2>
+          <p>Most sellers who contact us are dealing with one of these situations and want a clean, direct option instead of months of uncertainty.</p>
+        </div>
+
+        <div class="pill-grid">
+          <div class="pill">Inherited house</div>
+          <div class="pill">Repair issues</div>
+          <div class="pill">Vacant property</div>
+          <div class="pill">Foreclosure pressure</div>
+          <div class="pill">Bad tenants</div>
+          <div class="pill">Landlord burnout</div>
+          <div class="pill">Divorce or separation</div>
+          <div class="pill">Need to move fast</div>
         </div>
       </div>
     </section>
@@ -740,11 +900,19 @@
     </section>
 
     <section class="section">
-      <div class="wrap">
-        <div class="section-head">
+      <div class="wrap buyer-box">
+        <div class="buyer-photo">
+          <div>
+            <div class="buyer-avatar">J</div>
+            <h3>Real local buyer</h3>
+            <p>Add your photo here later if you want. For now, this still makes the section feel intentional and personal instead of empty.</p>
+          </div>
+        </div>
+        <div class="buyer-copy">
           <div class="eyebrow">Meet the buyer</div>
-          <h2>Talk directly to a local buyer.</h2>
+          <h3>Talk directly to a local buyer.</h3>
           <p>Hi, I’m Joshua. When you reach out, you’re dealing directly with me, not a sales rep. I look at each property personally and give you a straightforward offer based on the condition, numbers, and local market.</p>
+          <p style="margin-top:12px;">That means no call center, no pressure, and no runaround. Just a real conversation about your property and whether a direct sale makes sense for you.</p>
         </div>
       </div>
     </section>
@@ -857,11 +1025,19 @@
       <div>Serving Lafayette, Broussard, Youngsville, Scott, Carencro, and surrounding Acadiana areas.</div>
     </div>
   </footer>
+
+  <a href="tel:+13372702488" class="call-float">Call (337) 270-2488</a>
+
   <script>
     const form = document.getElementById("sellerForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const successMessage = document.getElementById("successMessage");
 
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
 
       const data = {
         firstName: document.getElementById("name").value,
@@ -879,14 +1055,19 @@
         });
 
         if (response.ok) {
-          alert("Thanks. We got your info and will reach out shortly.");
+          successMessage.classList.add("show");
           form.reset();
+          submitBtn.textContent = "Submitted";
         } else {
           alert("Something went wrong. Please call or text (337) 270-2488.");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Get My Cash Offer";
         }
       } catch (error) {
         alert("Something went wrong. Please call or text (337) 270-2488.");
         console.error(error);
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Get My Cash Offer";
       }
     });
   </script>
