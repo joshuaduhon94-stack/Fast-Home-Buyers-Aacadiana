@@ -464,9 +464,11 @@
 
 .buyer-photo {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  text-align: center;
+  padding: 24px;
 }
 
 .buyer-photo img {
@@ -477,6 +479,8 @@
   border-radius: 999px;
   border: 3px solid rgba(34,197,94,0.6);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  display: block;
+  margin-bottom: 10px;
 }
     .buyer-copy h3 {
       margin: 0 0 10px;
@@ -896,13 +900,12 @@
 
     <section class="section">
       <div class="wrap buyer-box">
-   <div class="buyer-photo">
-  <div style="text-align:center;">
-    <img src="joshua.jpg" alt="Joshua - Local Home Buyer in Acadiana">
-    <p style="margin-top:10px; font-size:14px; color:#a8b4c9;">
-      Based in Lafayette, LA
-    </p>
-  </div>
+  <div class="buyer-photo">
+  <img src="joshua.jpg.png" alt="Joshua - Local Home Buyer in Acadiana">
+  <p style="margin-top:10px; font-size:14px; color:#a8b4c9; text-align:center;">
+    Based in Lafayette, LA
+  </p>
+</div>
 </div>
         </div>
         <div class="buyer-copy">
