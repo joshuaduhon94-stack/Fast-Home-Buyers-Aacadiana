@@ -684,7 +684,20 @@
   .trust-strip {
     grid-template-columns: 1fr;
   }
+.hero-side {
+  display: flex;
+  align-items: center;
+}
 
+.hero-side .trust-strip {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 980px) {
+  .hero-side {
+    display: none;
+  }
+}
   </style>
 
   <script type="application/ld+json">
@@ -781,7 +794,16 @@
   <div class="hero-mini-trust">
     No repairs • No commissions • Local buyer • Flexible closing
   </div>
-
+<section class="section" style="padding-top:20px; padding-bottom:20px;">
+  <div class="wrap">
+    <div class="trust-strip">
+      <div class="trust-strip-item"><strong>Inherited house</strong> Need a simple way to sell.</div>
+      <div class="trust-strip-item"><strong>Repair issues</strong> Skip fixing and updating.</div>
+      <div class="trust-strip-item"><strong>Bad tenants</strong> Sell without the usual hassle.</div>
+      <div class="trust-strip-item"><strong>Need to move fast</strong> Get a direct offer and timeline.</div>
+    </div>
+  </div>
+</section>
   <form id="sellerFormTop">
     <div class="hero-form-grid">
       <input id="topAddress" name="address1" type="text" placeholder="Property address" required autocomplete="street-address">
@@ -808,17 +830,6 @@
           <a href="/areas-we-buy.html" style="color:#22c55e; font-weight:700;">View all areas we serve</a>.
         </p>
       </div>
-    </section>
-<section class="section" style="padding-top:20px; padding-bottom:20px;">
-  <div class="wrap">
-    <div class="trust-strip">
-      <div class="trust-strip-item"><strong>Inherited house</strong> Need a simple way to sell.</div>
-      <div class="trust-strip-item"><strong>Repair issues</strong> Skip fixing and updating.</div>
-      <div class="trust-strip-item"><strong>Bad tenants</strong> Sell without the usual hassle.</div>
-      <div class="trust-strip-item"><strong>Need to move fast</strong> Get a direct offer and timeline.</div>
-    </div>
-  </div>
-</section>
     <section class="section">
       <div class="wrap stats">
         <div class="stat">
