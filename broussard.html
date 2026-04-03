@@ -611,6 +611,48 @@
         box-shadow: 0 14px 30px rgba(0,0,0,.35);
       }
     }
+    .hero-mini-form {
+  margin: 22px 0 24px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(8,17,31,.42);
+  border-radius: 18px;
+  backdrop-filter: blur(2px);
+}
+
+.hero-mini-trust {
+  margin-bottom: 14px;
+  color: #d7e3f7;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hero-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.hero-mini-form input {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: white;
+  padding: 14px 15px;
+  outline: none;
+  font: inherit;
+}
+
+.hero-mini-form input::placeholder {
+  color: #97a8c3;
+}
+
+.hero-mini-form input:focus {
+  border-color: rgba(34,197,94,.55);
+  box-shadow: 0 0 0 4px rgba(34,197,94,.14);
+}
   </style>
 
   <script type="application/ld+json">
@@ -703,36 +745,23 @@
           <h1>Sell My House Fast Broussard LA</h1>
           <p class="lead">If you need to sell your house fast in Broussard, we buy houses as-is with no repairs, no commissions, and flexible closing. Whether the property needs work or you just want a simpler way out, we can help.</p>
 
-          <div class="hero-points">
-            <div class="point">
-              <span>✓</span>
-              <div>
-                <strong>No repairs</strong>
-                Sell exactly as-is without fixing or cleaning anything first.
-              </div>
-            </div>
-            <div class="point">
-              <span>✓</span>
-              <div>
-                <strong>No commissions</strong>
-                Skip agent fees, showings, and long waiting periods.
-              </div>
-            </div>
-            <div class="point">
-              <span>✓</span>
-              <div>
-                <strong>Close fast</strong>
-                We can move quickly when timing matters most.
-              </div>
-            </div>
-            <div class="point">
-              <span>✓</span>
-              <div>
-                <strong>Local buyer</strong>
-                You deal directly with a real local buyer, not a call center.
-              </div>
-            </div>
-          </div>
+    <div class="hero-mini-form">
+  <div class="hero-mini-trust">
+    No repairs • No commissions • Local buyer • Flexible closing
+  </div>
+
+  <form id="sellerFormTop">
+    <div class="hero-form-grid">
+      <input id="topAddress" name="address1" type="text" placeholder="Property address" required autocomplete="street-address">
+      <input id="topName" name="firstName" type="text" placeholder="Your name" required autocomplete="name">
+      <input id="topPhone" name="phone" type="tel" placeholder="Phone number" required autocomplete="tel">
+    </div>
+
+    <button class="btn btn-primary btn-full" id="submitBtnTop" type="submit">Get My Broussard Offer</button>
+  </form>
+
+  <div id="successMessageTop" class="success-message">Got it. We’ll reach out shortly to go over your property.</div>
+</div>
 
           <div class="cta-row">
             <a class="btn btn-primary" href="#offer-form">Get My Broussard Offer</a>
@@ -1006,48 +1035,64 @@
 
   <a href="tel:+13372702488" class="call-float">Call (337) 270-2488</a>
 
-  <script>
-    const form = document.getElementById("sellerForm");
-    const submitBtn = document.getElementById("submitBtn");
-    const successMessage = document.getElementById("successMessage");
+<script>
+  async function handleLeadSubmit(formEl, submitBtnEl, successEl, addressId, nameId, phoneId, defaultBtnText) {
+    submitBtnEl.disabled = true;
+    submitBtnEl.textContent = "Submitting...";
 
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
+    const data = {
+      firstName: document.getElementById(nameId).value,
+      phone: document.getElementById(phoneId).value,
+      address1: document.getElementById(addressId).value
+    };
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
+    try {
+      const response = await fetch("https://services.leadconnectorhq.com/hooks/KCtURJm9dbBpVYaL6uV8/webhook-trigger/6d5d89bc-4f76-4146-8a17-e3755e1baa14", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
 
-      const data = {
-        firstName: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        address1: document.getElementById("address").value
-      };
-
-      try {
-        const response = await fetch("https://services.leadconnectorhq.com/hooks/KCtURJm9dbBpVYaL6uV8/webhook-trigger/6d5d89bc-4f76-4146-8a17-e3755e1baa14", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-          successMessage.classList.add("show");
-          form.reset();
-          submitBtn.textContent = "Submitted";
-        } else {
-          alert("Something went wrong. Please call or text (337) 270-2488.");
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Get My Broussard Cash Offer";
-        }
-      } catch (error) {
+      if (response.ok) {
+        successEl.classList.add("show");
+        formEl.reset();
+        submitBtnEl.textContent = "Submitted";
+      } else {
         alert("Something went wrong. Please call or text (337) 270-2488.");
-        console.error(error);
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Get My Broussard Cash Offer";
+        submitBtnEl.disabled = false;
+        submitBtnEl.textContent = defaultBtnText;
       }
+    } catch (error) {
+      alert("Something went wrong. Please call or text (337) 270-2488.");
+      console.error(error);
+      submitBtnEl.disabled = false;
+      submitBtnEl.textContent = defaultBtnText;
+    }
+  }
+
+  const form = document.getElementById("sellerForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const successMessage = document.getElementById("successMessage");
+
+  if (form && submitBtn && successMessage) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      handleLeadSubmit(form, submitBtn, successMessage, "address", "name", "phone", "Get My Broussard Cash Offer");
     });
-  </script>
+  }
+
+  const formTop = document.getElementById("sellerFormTop");
+  const submitBtnTop = document.getElementById("submitBtnTop");
+  const successMessageTop = document.getElementById("successMessageTop");
+
+  if (formTop && submitBtnTop && successMessageTop) {
+    formTop.addEventListener("submit", function (e) {
+      e.preventDefault();
+      handleLeadSubmit(formTop, submitBtnTop, successMessageTop, "topAddress", "topName", "topPhone", "Get My Broussard Offer");
+    });
+  }
+</script>
 </body>
 </html>
