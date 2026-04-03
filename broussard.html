@@ -652,7 +652,39 @@
 .hero-mini-form input:focus {
   border-color: rgba(34,197,94,.55);
   box-shadow: 0 0 0 4px rgba(34,197,94,.14);
+}.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 14px;
 }
+
+.trust-strip-item {
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  color: var(--muted);
+}
+
+.trust-strip-item strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+@media (max-width: 980px) {
+  .trust-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .trust-strip {
+    grid-template-columns: 1fr;
+  }
+
   </style>
 
   <script type="application/ld+json">
@@ -777,7 +809,16 @@
         </p>
       </div>
     </section>
-
+<section class="section" style="padding-top:20px; padding-bottom:20px;">
+  <div class="wrap">
+    <div class="trust-strip">
+      <div class="trust-strip-item"><strong>Inherited house</strong> Need a simple way to sell.</div>
+      <div class="trust-strip-item"><strong>Repair issues</strong> Skip fixing and updating.</div>
+      <div class="trust-strip-item"><strong>Bad tenants</strong> Sell without the usual hassle.</div>
+      <div class="trust-strip-item"><strong>Need to move fast</strong> Get a direct offer and timeline.</div>
+    </div>
+  </div>
+</section>
     <section class="section">
       <div class="wrap stats">
         <div class="stat">
